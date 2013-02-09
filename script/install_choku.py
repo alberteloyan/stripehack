@@ -33,7 +33,7 @@ lamp_commands = [
 'sudo apt-get install mysql-client-core-5.5',
 'sudo /sbin/chkconfig mysql on',
 'service mysqld start',
-'sudo apt-get install php php-mysql',
+'sudo apt-get install php5',
 'install php-xml php-pdo php-odbc php-soap php-common php-cli php-mbstring php-bcmath php-ldap php-imap php-gd',
 'sudo apt-get install nginx'
 'service nginx start']
