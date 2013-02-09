@@ -1,3 +1,10 @@
+Initialized empty Git repository in /opt/git/shit.git/
+
+
+Cloning into shit...
+warning: You appear to have cloned an empty repository.
+done.
+
 sudo: apt-get: command not found
 
 sudo: apt-get: command not found
@@ -6,6 +13,14 @@ sudo: /sbin/chkconfig: command not found
 
 /bin/sh: service: command not found
 
-/Users/Albert/Desktop/stripehack/script
+sudo: apt-get: command not found
+
+usage: install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 file2
+       install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 ... fileN directory
+       install -d [-v] [-g group] [-m mode] [-o owner] directory ...
+
+sudo: apt-get: command not found
 
 Log file for shit:

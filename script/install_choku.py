@@ -6,28 +6,37 @@ import re
 
 #depending on installation type 
 
-def install_system(system_type, command_list, log_file):
+def install_system(system_type, command_list, log_file, app_name):
 
-	if system_type == 'lamp':
-		for command in command_list:
-			print 'Executing:' + command
-			system_execute = subprocess.Popen(command, stdin =PIPE, stderr=STDOUT, stdout=PIPE, shell=True)
-			system_response = system_execute.stdout.read()
-			print system_response
-			log_file.write(system_response)
-			#log_file.write(system_message)
-			log_file.write('\n')
+	#installing git 
+	git_commands = ['git init --bare /opt/git/'+app_name+'.git', 'mkdir /var/www', 'cd /var/www && git clone /opt/git/'+app_name+'.git']
+	execute_commands(git_commands)
+
+	#installing system-specific stack
+	execute_commands(command_list)
 	print 'System successfully installed. Log file in same directory.'
+
+def execute_commands(command_list):
+	for command in command_list:
+		print 'Executing:' + command
+		system_execute = subprocess.Popen(command, stdin =PIPE, stderr=STDOUT, stdout=PIPE, shell=True)
+		system_response = system_execute.stdout.read()
+		print system_response
+		log_file.write(system_response)
+		#log_file.write(system_message)
+		log_file.write('\n')
 
 #===============================================================================
 
+#list of commands to set up lamp stack
 lamp_commands = [
-'sudo apt-get install mysql',
-'sudo apt-get install mysql-server',
+'sudo apt-get install mysql-client-core-5.5',
 'sudo /sbin/chkconfig mysql on',
 'service mysqld start',
-'pwd']
-rails_commands = []
+'sudo apt-get install php5',
+'install php-xml php-pdo php-odbc php-soap php-common php-cli php-mbstring php-bcmath php-ldap php-imap php-gd',
+'sudo apt-get install nginx'
+'service nginx start']
 
 log_file = open('log.txt', 'w+')
 
@@ -43,7 +52,7 @@ if (rails is not None):
 elif (lamps is not None):
 	system_type = 'lamp'
 	#launch lamp subroutine
-	install_system(system_type, lamp_commands, log_file)
+	install_system(system_type, lamp_commands, log_file, app_name)
 elif (django is not None):
 	system_type = 'django'
 else:
