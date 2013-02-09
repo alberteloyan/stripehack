@@ -1,0 +1,11 @@
+sudo: apt-get: command not found
+
+sudo: apt-get: command not found
+
+sudo: /sbin/chkconfig: command not found
+
+/bin/sh: service: command not found
+
+/Users/Albert/Desktop/stripehack/script
+
+Log file for shit:
