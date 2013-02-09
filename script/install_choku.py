@@ -30,8 +30,7 @@ def execute_commands(command_list):
 
 #list of commands to set up lamp stack
 lamp_commands = [
-'sudo apt-get install mysql',
-'sudo apt-get install mysql-server',
+'sudo apt-get install mysql-client-core-5.5',
 'sudo /sbin/chkconfig mysql on',
 'service mysqld start',
 'sudo apt-get install php php-mysql',
