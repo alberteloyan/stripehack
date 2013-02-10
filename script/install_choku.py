@@ -21,12 +21,12 @@ def execute_commands(command_list):
 		system_execute = subprocess.Popen(command, stdin =PIPE, stderr=STDOUT, stdout=PIPE, shell=True)
 		system_response = ""
 		while True:
-  			line = system_execute.stdout.readline()
-  			if line != '':
-    			print line
-    			system_response += line + "\n"
-  			else:
-    			break
+			line = system_execute.stdout.readline()
+			if line != '':
+				print line
+				system_response += line + "\n"
+			else:
+				break
 
 		log_file.write(system_response)
 		#log_file.write(system_message)
