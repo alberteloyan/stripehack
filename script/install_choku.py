@@ -47,8 +47,8 @@ lamp_commands = [
 static_commands = [
 'yes | sudo apt-get install nginx',
 'sudo rm /etc/nginx/sites-enabled/*',
-'cp choku_nginx /etc/nginx/sites-enabled',
-'service nginx start']
+'sudo cp choku_nginx /etc/nginx/sites-enabled',
+'sudo service nginx start']
 
 log_file = open('log.txt', 'w+')
 
