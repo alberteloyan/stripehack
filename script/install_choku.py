@@ -45,7 +45,7 @@ lamp_commands = [
 'service nginx start']
 
 static_commands = [
-'sudo apt-get install nginx',
+'yes | sudo apt-get install nginx',
 'sudo rm /etc/nginx/sites-enabled/*',
 'cp choku_nginx /etc/nginx/sites-enabled',
 'service nginx start']
