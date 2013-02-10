@@ -9,7 +9,7 @@ import re
 def install_system(system_type, command_list, log_file, app_name):
 
 	#installing git 
-	git_commands = ['git init --bare /opt/git/'+app_name+'.git', 'mkdir /var/www', 'cd /var/www && git clone /opt/git/'+app_name+'.git']
+	git_commands = ['git init --bare /opt/git/'+app_name+'.git','cp post-receive /opt/git/app.git/hooks', 'mkdir /var/www', 'cd /var/www && git clone /opt/git/'+app_name+'.git']
 	execute_commands(git_commands)
 
 	#installing system-specific stack
