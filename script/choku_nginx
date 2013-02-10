@@ -1,8 +1,8 @@
 server {
     listen 80;
+    root /var/www/app/;
 
     location / {
-      alias /var/www/app/;
       index index.html;
     }
 
