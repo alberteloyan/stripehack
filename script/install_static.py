@@ -37,7 +37,7 @@ def execute_commands(command_list):
 static_commands = [
 'yes | sudo apt-get install nginx',
 'sudo rm /etc/nginx/sites-enabled/*',
-'sudo cp choku_nginx /etc/nginx/sites-enabled',
+'sudo cp static_nginx /etc/nginx/sites-enabled',
 'sudo service nginx start']
 
 log_file = open('log.txt', 'w+')
