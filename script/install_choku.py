@@ -19,8 +19,15 @@ def execute_commands(command_list):
 	for command in command_list:
 		print 'Executing:' + command
 		system_execute = subprocess.Popen(command, stdin =PIPE, stderr=STDOUT, stdout=PIPE, shell=True)
-		system_response = system_execute.stdout.read()
-		print system_response
+		system_response = ""
+		while True:
+  			line = system_execute.stdout.readline()
+  			if line != '':
+    			print line
+    			system_response += line + "\n"
+  			else:
+    			break
+
 		log_file.write(system_response)
 		#log_file.write(system_message)
 		log_file.write('\n')
